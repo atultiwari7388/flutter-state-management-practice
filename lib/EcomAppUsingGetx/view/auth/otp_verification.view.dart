@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/controller/login_view_controller.controller.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/controller/AuthViewController/login_view_controller.controller.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import '../widgets/custom_button.widgets.dart';
+import '../../widgets/custom_button.widgets.dart';
 
 class OtpVerificationScreen extends StatelessWidget {
   const OtpVerificationScreen({Key? key}) : super(key: key);
@@ -77,7 +77,7 @@ class OtpVerificationScreen extends StatelessWidget {
                   width: size.width / 1.2,
                   child: PinCodeTextField(
                     appContext: context,
-                    controller: loginViewController.otpController,
+                    // controller: loginViewController.otpController,
                     length: 6,
                     onChanged: (val) {},
                     pinTheme: PinTheme(

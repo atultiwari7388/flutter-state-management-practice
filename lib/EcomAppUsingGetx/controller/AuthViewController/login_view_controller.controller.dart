@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/utils/toats_msg.utils.dart';
-import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/otp_verification.view.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/auth/otp_verification.view.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/home/home.view.dart';
 import 'package:get/get.dart';
 
 class LoginViewController extends GetxController {
@@ -54,6 +55,7 @@ class LoginViewController extends GetxController {
       //for storing the user data
       final User? user = signInUser.user;
       showAlert("Successfully, User UID : ${user!.uid}");
+      Get.to(() => const EcomHomeView());
     } catch (e) {
       showAlert("Error Occurred $e");
     }

@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/login_view.view.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/auth/logged_in.auth.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/auth/login_view.view.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/home/home.view.dart';
 import 'package:get/get.dart';
 
 void main() async {
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginView(),
+      home: LoggedInView(),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/controller/login_view_controller.controller.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/controller/AuthViewController/login_view_controller.controller.dart';
 import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/widgets/custom_button.widgets.dart';
 import 'package:get/get.dart';
 
