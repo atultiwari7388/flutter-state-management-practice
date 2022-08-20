@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_statemanagement_practice/TextToSpeechConverter/texttospeech.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,13 +12,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'State Management Practice',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(),
+      home: const TextToSpeechView(),
     );
   }
 }

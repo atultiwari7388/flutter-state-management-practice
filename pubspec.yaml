@@ -21,6 +21,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   #statemanagemnt1
   provider: ^6.0.3
+  #statemanagement2
+  get: ^4.6.5
+  #text_to_speech converter
+  flutter_tts: ^3.5.0
 
 dev_dependencies:
   flutter_test:
