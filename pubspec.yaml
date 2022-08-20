@@ -25,6 +25,13 @@ dependencies:
   get: ^4.6.5
   #text_to_speech converter
   flutter_tts: ^3.5.0
+  #ecom-app-dev-packages
+  pin_code_fields: ^7.4.0
+  firebase_auth: ^3.6.4
+  firebase_core: ^1.21.0
+  cloud_firestore: ^3.4.5
+  shared_preferences: ^2.0.15
+  fluttertoast: ^8.0.9
 
 dev_dependencies:
   flutter_test:

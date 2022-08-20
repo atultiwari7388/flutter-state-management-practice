@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "796380362395",
+    "project_id": "ecom-app-using-getx",
+    "storage_bucket": "ecom-app-using-getx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796380362395:android:f260abde56eef902dd783e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_statemanagement_practice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796380362395-crjrltbopp2obecj3ni245nft6u858dv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGMg74p5ZOJJFPPOq1LcluXJAuNdo3sTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796380362395-crjrltbopp2obecj3ni245nft6u858dv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

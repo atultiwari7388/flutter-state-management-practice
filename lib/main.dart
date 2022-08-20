@@ -1,8 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_statemanagement_practice/TextToSpeechConverter/texttospeech.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/login_view.view.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const TextToSpeechView(),
+      home: const LoginView(),
     );
   }
 }
