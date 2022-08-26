@@ -1,5 +1,10 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/controller/Cart/cart_view_controller.controller.dart';
 import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/controller/HomeViewController/home_view_controller.controller.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/cart/cart_view.cart.view.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/home/category_and_featured.home.view.dart';
+import 'package:flutter_statemanagement_practice/EcomAppUsingGetx/view/Items/item_screen.home.view.dart';
 import 'package:get/get.dart';
 
 import '../../models/categories_model.models.dart';
@@ -11,6 +16,7 @@ class EcomHomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = Get.size;
     final homeViewController = Get.put(HomeViewController());
+
     return GetBuilder<HomeViewController>(builder: (value) {
       if (!value.isLoading) {
         return Scaffold(
@@ -20,9 +26,8 @@ class EcomHomeView extends StatelessWidget {
             elevation: 1.0,
             actions: [
               IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.add_shopping_cart_outlined),
-              )
+                  onPressed: () => Get.to(() => CartView()),
+                  icon: const Icon(Icons.shopping_cart_outlined))
             ],
           ),
           drawer: const CustomDrawerWidget(),
@@ -77,14 +82,24 @@ class EcomHomeView extends StatelessWidget {
                   categoriesTile(
                     size,
                     "All Categories",
-                    () {},
+                    () => Get.to(
+                      () => CategoryAndFeaturedView(
+                          model: homeViewController.categoriesData),
+                      transition: Transition.circularReveal,
+                      duration: const Duration(milliseconds: 1000),
+                    ),
                   ),
                   listViewBuilder(size, homeViewController.categoriesData),
                   SizedBox(height: size.height / 25),
                   categoriesTile(
                     size,
                     "Featured",
-                    () {},
+                    () => Get.to(
+                      () => CategoryAndFeaturedView(
+                          model: homeViewController.featureData),
+                      transition: Transition.circularReveal,
+                      duration: const Duration(seconds: 2),
+                    ),
                   ),
                   listViewBuilder(size, homeViewController.featureData),
                 ],
@@ -117,35 +132,44 @@ class EcomHomeView extends StatelessWidget {
   }
 
   Widget listViewBuilderItems(Size size, CategoriesModelData categories) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4.0),
-      child: SizedBox(
-        height: size.height / 7,
-        width: size.width / 4.2,
-        child: Column(
-          children: [
-            Container(
-              height: size.height / 16,
-              width: size.width / 2.2,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(categories.image),
-                ),
-              ),
-            ),
-            Expanded(
-              child: SizedBox(
-                child: Text(
-                  categories.title,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14.0,
+    return GestureDetector(
+      onTap: () => Get.to(
+        () => ItemView(
+          categoryId: categories.id,
+          categoryName: categories.title,
+        ),
+        transition: Transition.circularReveal,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+        child: SizedBox(
+          height: size.height / 7,
+          width: size.width / 4.2,
+          child: Column(
+            children: [
+              Container(
+                height: size.height / 16,
+                width: size.width / 2.2,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(categories.image),
                   ),
                 ),
               ),
-            ),
-          ],
+              Expanded(
+                child: SizedBox(
+                  child: Text(
+                    categories.title,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14.0,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
